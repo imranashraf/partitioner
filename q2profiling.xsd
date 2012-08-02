@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/q2profiling" xmlns:tns="http://www.example.org/q2profiling" elementFormDefault="qualified">
+
+    <element name="profiles" type="tns:ProfilesType"></element>
+    
+    
+
+
+    
+
+
+    
+    <complexType name="FunctionType">
+    	<sequence>
+    		<element name="metrics">
+    			<complexType>
+    				<sequence>
+    					<element name="metric" type="tns:MetricType"
+    						minOccurs="0" maxOccurs="unbounded">
+    					</element>
+    				</sequence>
+    			</complexType>
+    		</element>
+    		<element name="statistics">
+    			<complexType>
+    				<sequence>
+    					<element name="measurement"
+    						type="tns:MeasurementType" minOccurs="0"
+    						maxOccurs="unbounded">
+    					</element>
+    					<element name="target" type="tns:TargetType"
+    						maxOccurs="unbounded" minOccurs="0">
+    					</element>
+    				</sequence>
+    			</complexType>
+    		</element>
+    		
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="MetricType">
+    	<simpleContent>
+    		<extension base="double">
+    			<attribute name="name" type="string" use="required"></attribute>
+    			<attribute name="type" type="string" use="required"></attribute>
+    		</extension>
+    	</simpleContent>    	
+    </complexType>
+
+    <complexType name="MeasurementType">
+    	<simpleContent>
+    		<extension base="double">
+    			<attribute name="unit" type="string"></attribute>
+    			    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="type" type="string" use="required"></attribute>
+    	<attribute name="by" type="string" use="required"></attribute>
+    		</extension>
+    	</simpleContent>
+
+    </complexType>
+
+    <complexType name="ChannelType">
+    	<sequence>
+    		<element name="UnMA" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="hUnMA" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="bytes" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="hBytes" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Values" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="hValues" type="int" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="producer" type="string" use="required"></attribute>
+    	<attribute name="consumer" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="CallType">
+    	<sequence>
+    		<element name="calls" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="contribution" type="double" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="caller" type="string" use="required"></attribute>
+    	<attribute name="callee" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="TargetType">
+    	<sequence>
+    		<element name="measurement" type="tns:MeasurementType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="ApplicationType">
+    	<sequence>
+    		<element name="location" type="string"></element>
+    		<element name="workdir" type="string"></element>
+    		<element name="arguments" type="string"></element>
+    		<element name="date" type="dateTime"></element>
+    		<element name="functions">
+    			<complexType>
+    				<sequence>
+    					<element name="function" type="tns:FunctionType"
+    						maxOccurs="unbounded" minOccurs="0">
+    					</element>
+    				</sequence>
+    			</complexType>
+    		</element>
+    		<element name="QDUGraph">
+    			<complexType>
+    				<sequence>
+    					<element name="channel" type="tns:ChannelType"
+    						maxOccurs="unbounded" minOccurs="0">
+    					</element>
+    				</sequence>
+    			</complexType>
+    		</element>
+    		<element name="CallGraph">
+    			<complexType>
+    				<sequence>
+    					<element name="call" type="tns:CallType"
+    						maxOccurs="unbounded" minOccurs="0">
+    					</element>
+    				</sequence>
+    			</complexType>
+    		</element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="category" type="string"></attribute>
+    </complexType>
+    
+
+
+    <complexType name="ProfilesType">
+    	<sequence>
+    		<element name="application" type="tns:ApplicationType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<anyAttribute></anyAttribute>
+    </complexType>
+</schema>

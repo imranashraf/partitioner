@@ -1,0 +1,1870 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<q2:profiles xmlns:q2="http://www.example.org/q2profiling" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/q2profiling q2profiling.xsd">
+    <q2:application name="klt">
+    
+	<q2:location>/home/rmeeuws/Documents/repository/q2profiling/apps/canny/original/canny</q2:location>
+	<q2:workdir>/home/rmeeuws/Documents/repository/q2profiling/apps/canny/original/</q2:workdir>
+	<q2:arguments>pics/pic1.pgm 2.0 0.5 0.5</q2:arguments>
+	<q2:date>2011-11-16T00:00:00</q2:date>
+	<q2:functions>
+		<q2:function name="hw_gaussian_nms">
+		<q2:metrics>
+			<q2:metric name="AICC" type="double">0.100848</q2:metric>
+			<q2:metric name="avg_nesting" type="double">0.000000</q2:metric>
+		</q2:metrics>
+		<q2:statistics>
+			<q2:measurement name="hMAR" type="execution" by="QUAD">0.792235451</q2:measurement>
+			<q2:target name="Virtex5">
+				<q2:measurement name="area" type="prediction" by="Quipu" unit="slices">7034</q2:measurement>
+				<q2:measurement name="power" type="prediction" by="Quipu" unit="mW">2289</q2:measurement>
+				<q2:measurement name="latency" type="simulation" by="ModelSim" unit="ns">4231009872</q2:measurement>
+			</q2:target>			
+			<q2:target name="PPC">
+				<q2:measurement name="latency" type="execution" by="manual" unit="ns">9011876540</q2:measurement>
+				<q2:measurement name="contribution" type="execution" by="MAIP" unit="%">90.34</q2:measurement>
+			</q2:target>			
+		</q2:statistics>
+		</q2:function>
+	</q2:functions>    
+	
+        <q2:QDUGraph>
+            <q2:channel producer="pgmRead" consumer="_KLTToFloatImage">
+                <q2:hUnMA>9600</q2:hUnMA>
+                <q2:hBytes>148800</q2:hBytes>
+                <q2:hValues>144000</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_KLTComputePyramid">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>120</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_interpolate">
+                <q2:hUnMA>180</q2:hUnMA>
+                <q2:hBytes>16232400</q2:hBytes>
+                <q2:hValues>2105</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_KLTToFloatImage">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>364</q2:hBytes>
+                <q2:hValues>340</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_convolveSeparate">
+                <q2:hUnMA>56</q2:hUnMA>
+                <q2:hBytes>1216</q2:hBytes>
+                <q2:hValues>645</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_convolveImageHoriz">
+                <q2:hUnMA>172</q2:hUnMA>
+                <q2:hBytes>4144</q2:hBytes>
+                <q2:hValues>3217</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_KLTComputePyramid">
+                <q2:hUnMA>32</q2:hUnMA>
+                <q2:hBytes>720</q2:hBytes>
+                <q2:hValues>480</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_convolveImageVert">
+                <q2:hUnMA>252</q2:hUnMA>
+                <q2:hBytes>4392</q2:hBytes>
+                <q2:hValues>4315</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTToFloatImage" consumer="_KLTToFloatImage">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTToFloatImage" consumer="_KLTComputeSmoothedImage">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>248</q2:hBytes>
+                <q2:hValues>244</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTToFloatImage" consumer="_convolveSeparate">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>248</q2:hBytes>
+                <q2:hValues>248</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTToFloatImage" consumer="_convolveImageHoriz">
+                <q2:hUnMA>38416</q2:hUnMA>
+                <q2:hBytes>4821368</q2:hBytes>
+                <q2:hValues>595441</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="_KLTComputePyramid">
+                <q2:hUnMA>224</q2:hUnMA>
+                <q2:hBytes>960</q2:hBytes>
+                <q2:hValues>915</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_convolveImageHoriz" consumer="_convolveImageVert">
+                <q2:hUnMA>148776</q2:hUnMA>
+                <q2:hBytes>19034880</q2:hBytes>
+                <q2:hValues>2649600</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTComputePyramid" consumer="_interpolate">
+                <q2:hUnMA>13772</q2:hUnMA>
+                <q2:hBytes>3924000</q2:hBytes>
+                <q2:hValues>96648</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTComputePyramid" consumer="_convolveImageHoriz">
+                <q2:hUnMA>57600</q2:hUnMA>
+                <q2:hBytes>7459200</q2:hBytes>
+                <q2:hValues>576000</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_convolveImageVert" consumer="_interpolate">
+                <q2:hUnMA>41692</q2:hUnMA>
+                <q2:hBytes>11980800</q2:hBytes>
+                <q2:hValues>316776</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_convolveImageVert" consumer="_convolveImageHoriz">
+                <q2:hUnMA>57600</q2:hUnMA>
+                <q2:hBytes>5792640</q2:hBytes>
+                <q2:hValues>595200</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_convolveImageVert" consumer="_KLTComputePyramid">
+                <q2:hUnMA>38400</q2:hUnMA>
+                <q2:hBytes>576000</q2:hBytes>
+                <q2:hValues>576000</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_convolveImageVert" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>23968</q2:hUnMA>
+                <q2:hBytes>835200</q2:hBytes>
+                <q2:hValues>153568</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_interpolate">
+                <q2:hUnMA>7844</q2:hUnMA>
+                <q2:hBytes>5738400</q2:hBytes>
+                <q2:hValues>61760</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_convolveImageHoriz">
+                <q2:hUnMA>14400</q2:hUnMA>
+                <q2:hBytes>1713600</q2:hBytes>
+                <q2:hValues>144000</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_createArray2D.clone.0">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_minEigenvalue">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>3072</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_printShutdown">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="Out_of_the_main_function_scope">
+                <q2:hUnMA>20229</q2:hUnMA>
+                <q2:hBytes>29758</q2:hBytes>
+                <q2:hValues>20229</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="pgmReadFile">
+                <q2:hUnMA>347</q2:hUnMA>
+                <q2:hBytes>1422</q2:hBytes>
+                <q2:hValues>382</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_printSetupBin">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>17</q2:hBytes>
+                <q2:hValues>13</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_start">
+                <q2:hUnMA>154</q2:hUnMA>
+                <q2:hBytes>197</q2:hBytes>
+                <q2:hValues>154</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="pgmRead">
+                <q2:hUnMA>12296</q2:hUnMA>
+                <q2:hBytes>14411</q2:hBytes>
+                <q2:hValues>12296</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>140</q2:hUnMA>
+                <q2:hBytes>182</q2:hBytes>
+                <q2:hValues>140</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>32</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_init">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="pnmReadHeader">
+                <q2:hUnMA>318</q2:hUnMA>
+                <q2:hBytes>1779</q2:hBytes>
+                <q2:hValues>318</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="__do_global_ctors_aux">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_getNextString">
+                <q2:hUnMA>403</q2:hUnMA>
+                <q2:hBytes>3665</q2:hBytes>
+                <q2:hValues>403</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="main">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTSelectGoodFeatures">
+                <q2:hUnMA>341</q2:hUnMA>
+                <q2:hBytes>576</q2:hBytes>
+                <q2:hValues>341</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTCreateTrackingContext">
+                <q2:hUnMA>25240</q2:hUnMA>
+                <q2:hBytes>25396</q2:hBytes>
+                <q2:hValues>25240</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_KLTSelectGoodFeatures">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>260</q2:hUnMA>
+                <q2:hBytes>5645</q2:hBytes>
+                <q2:hValues>340</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="__do_global_dtors_aux">
+                <q2:hUnMA>5</q2:hUnMA>
+                <q2:hBytes>5</q2:hBytes>
+                <q2:hValues>5</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTChangeTCPyramid">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>1980</q2:hBytes>
+                <q2:hValues>457</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>174</q2:hUnMA>
+                <q2:hBytes>2603</q2:hBytes>
+                <q2:hValues>146</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>123</q2:hUnMA>
+                <q2:hBytes>346</q2:hBytes>
+                <q2:hValues>123</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTUpdateTCBorder">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="ppmWrite">
+                <q2:hUnMA>150</q2:hUnMA>
+                <q2:hBytes>1352</q2:hBytes>
+                <q2:hValues>120</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_printSetupTxt">
+                <q2:hUnMA>53</q2:hUnMA>
+                <q2:hBytes>97</q2:hBytes>
+                <q2:hValues>53</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_KLTComputeSmoothedImage">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>488</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTTrackFeatures">
+                <q2:hUnMA>83</q2:hUnMA>
+                <q2:hBytes>4387</q2:hBytes>
+                <q2:hValues>83</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_printHeader">
+                <q2:hUnMA>508</q2:hUnMA>
+                <q2:hBytes>6323</q2:hBytes>
+                <q2:hValues>442</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>396</q2:hBytes>
+                <q2:hValues>59</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_findStringWidth">
+                <q2:hUnMA>246</q2:hUnMA>
+                <q2:hBytes>404</q2:hBytes>
+                <q2:hValues>246</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_computeKernels.clone.0">
+                <q2:hUnMA>139</q2:hUnMA>
+                <q2:hBytes>135113</q2:hBytes>
+                <q2:hValues>139</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_isCharInString.clone.0">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>44</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_trackFeature">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>19648</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_printInteger">
+                <q2:hUnMA>57</q2:hUnMA>
+                <q2:hBytes>1830</q2:hBytes>
+                <q2:hValues>57</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTCreateFeatureList">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>505</q2:hUnMA>
+                <q2:hBytes>14087</q2:hBytes>
+                <q2:hValues>521</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_allocateFloatWindow">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12576</q2:hBytes>
+                <q2:hValues>1469</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="KLTCreateFeatureTable">
+                <q2:hUnMA>40</q2:hUnMA>
+                <q2:hBytes>52</q2:hBytes>
+                <q2:hValues>40</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_KLTComputeGradients">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>488</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="UNKNOWN_PRODUCER(CONSTANT_DATA)" consumer="_printFeatureTxt">
+                <q2:hUnMA>120</q2:hUnMA>
+                <q2:hBytes>361990</q2:hBytes>
+                <q2:hValues>116</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_createArray2D.clone.0" consumer="_createArray2D.clone.0">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_createArray2D.clone.0" consumer="pgmReadFile">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_createArray2D.clone.0" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_createArray2D.clone.0" consumer="KLTStoreFeatureList">
+                <q2:hUnMA>600</q2:hUnMA>
+                <q2:hBytes>18000</q2:hBytes>
+                <q2:hValues>600</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_createArray2D.clone.0" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>600</q2:hUnMA>
+                <q2:hBytes>18000</q2:hBytes>
+                <q2:hValues>600</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_createArray2D.clone.0" consumer="_printHeader">
+                <q2:hUnMA>600</q2:hUnMA>
+                <q2:hBytes>18000</q2:hBytes>
+                <q2:hValues>600</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_createArray2D.clone.0" consumer="KLTCreateFeatureTable">
+                <q2:hUnMA>612</q2:hUnMA>
+                <q2:hBytes>612</q2:hBytes>
+                <q2:hValues>612</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printShutdown" consumer="_printShutdown">
+                <q2:hUnMA>44</q2:hUnMA>
+                <q2:hBytes>91</q2:hBytes>
+                <q2:hValues>13</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printShutdown" consumer="_printSetupBin">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>44</q2:hBytes>
+                <q2:hValues>32</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_createArray2D.clone.0">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printShutdown">
+                <q2:hUnMA>44</q2:hUnMA>
+                <q2:hBytes>92</q2:hBytes>
+                <q2:hValues>42</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="Out_of_the_main_function_scope">
+                <q2:hUnMA>1770</q2:hUnMA>
+                <q2:hBytes>25405</q2:hBytes>
+                <q2:hValues>2965</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="pgmReadFile">
+                <q2:hUnMA>349</q2:hUnMA>
+                <q2:hBytes>4888</q2:hBytes>
+                <q2:hValues>443</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printSetupBin">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>52</q2:hBytes>
+                <q2:hValues>17</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_start">
+                <q2:hUnMA>289</q2:hUnMA>
+                <q2:hBytes>341</q2:hBytes>
+                <q2:hValues>289</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="pgmRead">
+                <q2:hUnMA>40</q2:hUnMA>
+                <q2:hBytes>29420</q2:hBytes>
+                <q2:hValues>69</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printFeatureBin">
+                <q2:hUnMA>28</q2:hUnMA>
+                <q2:hBytes>270208</q2:hBytes>
+                <q2:hValues>13523</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>253</q2:hUnMA>
+                <q2:hBytes>305</q2:hBytes>
+                <q2:hValues>253</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>32</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_init">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="pnmReadHeader">
+                <q2:hUnMA>325</q2:hUnMA>
+                <q2:hBytes>5703</q2:hBytes>
+                <q2:hValues>337</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_getNextString">
+                <q2:hUnMA>337</q2:hUnMA>
+                <q2:hBytes>26926</q2:hBytes>
+                <q2:hValues>364</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="main">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTSelectGoodFeatures">
+                <q2:hUnMA>309</q2:hUnMA>
+                <q2:hBytes>722</q2:hBytes>
+                <q2:hValues>309</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTCreateTrackingContext">
+                <q2:hUnMA>382</q2:hUnMA>
+                <q2:hBytes>13359</q2:hBytes>
+                <q2:hValues>382</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_KLTSelectGoodFeatures">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>301</q2:hUnMA>
+                <q2:hBytes>6141</q2:hBytes>
+                <q2:hValues>355</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>9168</q2:hBytes>
+                <q2:hValues>68</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>301</q2:hUnMA>
+                <q2:hBytes>6469</q2:hBytes>
+                <q2:hValues>146</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>92</q2:hUnMA>
+                <q2:hBytes>440</q2:hBytes>
+                <q2:hValues>118</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="ppmWrite">
+                <q2:hUnMA>285</q2:hUnMA>
+                <q2:hBytes>8645181</q2:hBytes>
+                <q2:hValues>202</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printSetupTxt">
+                <q2:hUnMA>40</q2:hUnMA>
+                <q2:hBytes>104</q2:hBytes>
+                <q2:hValues>32</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTTrackFeatures">
+                <q2:hUnMA>64</q2:hUnMA>
+                <q2:hBytes>5568</q2:hBytes>
+                <q2:hValues>74</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printHeader">
+                <q2:hUnMA>285</q2:hUnMA>
+                <q2:hBytes>10161</q2:hBytes>
+                <q2:hValues>49</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>1800</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_findStringWidth">
+                <q2:hUnMA>317</q2:hUnMA>
+                <q2:hBytes>782</q2:hBytes>
+                <q2:hValues>321</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_computeKernels.clone.0">
+                <q2:hUnMA>183</q2:hUnMA>
+                <q2:hBytes>26895</q2:hBytes>
+                <q2:hValues>183</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_trackFeature">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>18360</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printInteger">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>2760</q2:hBytes>
+                <q2:hValues>87</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTCreateFeatureList">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>542</q2:hUnMA>
+                <q2:hBytes>15564</q2:hBytes>
+                <q2:hValues>597</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_allocateFloatWindow">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>30600</q2:hBytes>
+                <q2:hValues>28</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printNhyphens">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>7200</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="KLTCreateFeatureTable">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>44</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="Out_of_the_main_function_scope" consumer="_printFeatureTxt">
+                <q2:hUnMA>72</q2:hUnMA>
+                <q2:hBytes>522332</q2:hBytes>
+                <q2:hValues>48</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="_printShutdown">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="pgmReadFile">
+                <q2:hUnMA>212</q2:hUnMA>
+                <q2:hBytes>13464</q2:hBytes>
+                <q2:hValues>6303</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="_printSetupBin">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="pgmRead">
+                <q2:hUnMA>70</q2:hUnMA>
+                <q2:hBytes>53142</q2:hBytes>
+                <q2:hValues>882</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="pnmReadHeader">
+                <q2:hUnMA>18</q2:hUnMA>
+                <q2:hBytes>870</q2:hBytes>
+                <q2:hValues>270</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="_getNextString">
+                <q2:hUnMA>150</q2:hUnMA>
+                <q2:hBytes>36124</q2:hBytes>
+                <q2:hValues>2185</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="main">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="KLTSelectGoodFeatures">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>1</q2:hUnMA>
+                <q2:hBytes>6</q2:hBytes>
+                <q2:hValues>1</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>912</q2:hBytes>
+                <q2:hValues>385</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>48</q2:hUnMA>
+                <q2:hBytes>1120</q2:hBytes>
+                <q2:hValues>648</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="_printSetupTxt">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>40</q2:hBytes>
+                <q2:hValues>36</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmReadFile" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>14</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeGradientSum" consumer="_compute2by2GradientMatrix">
+                <q2:hUnMA>5400</q2:hUnMA>
+                <q2:hBytes>1497600</q2:hBytes>
+                <q2:hValues>1497600</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeGradientSum" consumer="_compute2by1ErrorVector">
+                <q2:hUnMA>5400</q2:hUnMA>
+                <q2:hBytes>1497600</q2:hBytes>
+                <q2:hValues>1497600</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupBin" consumer="_printSetupBin">
+                <q2:hUnMA>77</q2:hUnMA>
+                <q2:hBytes>206</q2:hBytes>
+                <q2:hValues>60</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupBin" consumer="_printFeatureBin">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>405325</q2:hBytes>
+                <q2:hValues>81031</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupBin" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>124</q2:hUnMA>
+                <q2:hBytes>336</q2:hBytes>
+                <q2:hValues>139</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_start" consumer="_start">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_start" consumer="KLTCreateTrackingContext">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_start" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_start" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>52</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmRead" consumer="pgmReadFile">
+                <q2:hUnMA>48</q2:hUnMA>
+                <q2:hBytes>775</q2:hBytes>
+                <q2:hValues>490</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmRead" consumer="pgmRead">
+                <q2:hUnMA>56</q2:hUnMA>
+                <q2:hBytes>54008</q2:hBytes>
+                <q2:hValues>42815</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmRead" consumer="main">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pgmRead" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>9600</q2:hUnMA>
+                <q2:hBytes>432000</q2:hBytes>
+                <q2:hValues>144000</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_quicksort" consumer="_quicksort">
+                <q2:hUnMA>4528</q2:hUnMA>
+                <q2:hBytes>33088</q2:hBytes>
+                <q2:hValues>19576</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_quicksort" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>4608</q2:hUnMA>
+                <q2:hBytes>4608</q2:hBytes>
+                <q2:hValues>4608</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printFeatureBin" consumer="_printFeatureBin">
+                <q2:hUnMA>28</q2:hUnMA>
+                <q2:hBytes>374248</q2:hBytes>
+                <q2:hValues>64</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printFeatureBin" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>28</q2:hBytes>
+                <q2:hValues>1</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_enforceMinimumDistance" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>30</q2:hUnMA>
+                <q2:hBytes>90</q2:hBytes>
+                <q2:hValues>28</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_enforceMinimumDistance" consumer="KLTCountRemainingFeatures">
+                <q2:hUnMA>600</q2:hUnMA>
+                <q2:hBytes>48584</q2:hBytes>
+                <q2:hValues>600</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_enforceMinimumDistance" consumer="KLTStoreFeatureList">
+                <q2:hUnMA>1800</q2:hUnMA>
+                <q2:hBytes>49128</q2:hBytes>
+                <q2:hValues>1800</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_enforceMinimumDistance" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>716</q2:hUnMA>
+                <q2:hBytes>16492</q2:hBytes>
+                <q2:hValues>716</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_enforceMinimumDistance" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>2556</q2:hUnMA>
+                <q2:hBytes>17857</q2:hBytes>
+                <q2:hValues>2552</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTFreeFeatureTable" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>6</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTFreeFeatureTable" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>52</q2:hUnMA>
+                <q2:hBytes>84</q2:hBytes>
+                <q2:hValues>44</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pnmReadHeader" consumer="pgmReadFile">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pnmReadHeader" consumer="pgmRead">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>7800</q2:hBytes>
+                <q2:hValues>484</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pnmReadHeader" consumer="pnmReadHeader">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>952</q2:hBytes>
+                <q2:hValues>376</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pnmReadHeader" consumer="_getNextString">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>124</q2:hBytes>
+                <q2:hValues>124</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="pnmReadHeader" consumer="_findStringWidth">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_fillFeaturemap" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>370</q2:hUnMA>
+                <q2:hBytes>370</q2:hBytes>
+                <q2:hValues>370</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="pgmReadFile">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>480</q2:hBytes>
+                <q2:hValues>360</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="pgmRead">
+                <q2:hUnMA>58</q2:hUnMA>
+                <q2:hBytes>27630</q2:hBytes>
+                <q2:hValues>963</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="pnmReadHeader">
+                <q2:hUnMA>64</q2:hUnMA>
+                <q2:hBytes>1208</q2:hBytes>
+                <q2:hValues>961</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="_getNextString">
+                <q2:hUnMA>100</q2:hUnMA>
+                <q2:hBytes>64578</q2:hBytes>
+                <q2:hValues>38354</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="KLTSelectGoodFeatures">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>240</q2:hBytes>
+                <q2:hValues>120</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>116</q2:hBytes>
+                <q2:hValues>116</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="ppmWrite">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>120</q2:hBytes>
+                <q2:hValues>120</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="_printSetupTxt">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="KLTTrackFeatures">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>232</q2:hBytes>
+                <q2:hValues>116</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="_findStringWidth">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_getNextString" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>356</q2:hBytes>
+                <q2:hValues>120</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="pgmReadFile">
+                <q2:hUnMA>1</q2:hUnMA>
+                <q2:hBytes>1</q2:hBytes>
+                <q2:hValues>1</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="main">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="_KLTSelectGoodFeatures">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>32</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>13</q2:hUnMA>
+                <q2:hBytes>13</q2:hBytes>
+                <q2:hValues>13</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="KLTTrackFeatures">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>116</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="main" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>1356</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="KLTSelectGoodFeatures">
+                <q2:hUnMA>48</q2:hUnMA>
+                <q2:hBytes>128</q2:hBytes>
+                <q2:hValues>76</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>1920</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>128</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="ppmWrite">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>120</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="KLTTrackFeatures">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>2204</q2:hBytes>
+                <q2:hValues>24</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="_printHeader">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>608</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="_printInteger">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>120</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>64</q2:hUnMA>
+                <q2:hBytes>2340</q2:hBytes>
+                <q2:hValues>64</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTSelectGoodFeatures" consumer="_printFeatureTxt">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>18000</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTStoreFeatureList" consumer="_printFeatureBin">
+                <q2:hUnMA>54000</q2:hUnMA>
+                <q2:hBytes>54000</q2:hBytes>
+                <q2:hValues>54000</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTStoreFeatureList" consumer="_printFeatureTxt">
+                <q2:hUnMA>54000</q2:hUnMA>
+                <q2:hBytes>54000</q2:hBytes>
+                <q2:hValues>54000</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_createArray2D.clone.0">
+                <q2:hUnMA>25</q2:hUnMA>
+                <q2:hBytes>25</q2:hBytes>
+                <q2:hValues>25</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_printShutdown">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="pgmReadFile">
+                <q2:hUnMA>37</q2:hUnMA>
+                <q2:hBytes>614</q2:hBytes>
+                <q2:hValues>134</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_printSetupBin">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>13</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="pgmRead">
+                <q2:hUnMA>25</q2:hUnMA>
+                <q2:hBytes>25</q2:hBytes>
+                <q2:hValues>25</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>33</q2:hUnMA>
+                <q2:hBytes>44</q2:hBytes>
+                <q2:hValues>36</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>13</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="main">
+                <q2:hUnMA>29</q2:hUnMA>
+                <q2:hBytes>29</q2:hBytes>
+                <q2:hValues>29</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTCreateTrackingContext">
+                <q2:hUnMA>52</q2:hUnMA>
+                <q2:hBytes>75</q2:hBytes>
+                <q2:hValues>72</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_KLTSelectGoodFeatures">
+                <q2:hUnMA>33</q2:hUnMA>
+                <q2:hBytes>49</q2:hBytes>
+                <q2:hValues>33</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>49</q2:hUnMA>
+                <q2:hBytes>2123</q2:hBytes>
+                <q2:hValues>216</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTChangeTCPyramid">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>112</q2:hUnMA>
+                <q2:hBytes>8240</q2:hBytes>
+                <q2:hValues>1055</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>33</q2:hUnMA>
+                <q2:hBytes>1037</q2:hBytes>
+                <q2:hValues>193</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTUpdateTCBorder">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_printSetupTxt">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_KLTComputeSmoothSigma">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>384</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTTrackFeatures">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>468</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>1476</q2:hBytes>
+                <q2:hValues>218</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_computeKernels.clone.0">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_pyramidSigma">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_trackFeature">
+                <q2:hUnMA>5</q2:hUnMA>
+                <q2:hBytes>6204</q2:hBytes>
+                <q2:hValues>1546</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTCreateFeatureList">
+                <q2:hUnMA>37</q2:hUnMA>
+                <q2:hBytes>37</q2:hBytes>
+                <q2:hValues>37</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>92</q2:hUnMA>
+                <q2:hBytes>21602</q2:hBytes>
+                <q2:hValues>655</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="_allocateFloatWindow">
+                <q2:hUnMA>21</q2:hUnMA>
+                <q2:hBytes>30684</q2:hBytes>
+                <q2:hValues>3107</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateTrackingContext" consumer="KLTCreateFeatureTable">
+                <q2:hUnMA>41</q2:hUnMA>
+                <q2:hBytes>62</q2:hBytes>
+                <q2:hValues>41</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTSelectGoodFeatures" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTSelectGoodFeatures" consumer="_KLTSelectGoodFeatures">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTSelectGoodFeatures" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_printShutdown">
+                <q2:hUnMA>1</q2:hUnMA>
+                <q2:hBytes>2</q2:hBytes>
+                <q2:hValues>1</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="pgmReadFile">
+                <q2:hUnMA>17</q2:hUnMA>
+                <q2:hBytes>262</q2:hBytes>
+                <q2:hValues>234</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>21</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>185</q2:hUnMA>
+                <q2:hBytes>10210</q2:hBytes>
+                <q2:hValues>4955</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>21</q2:hUnMA>
+                <q2:hBytes>648</q2:hBytes>
+                <q2:hValues>178</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>41</q2:hUnMA>
+                <q2:hBytes>1825</q2:hBytes>
+                <q2:hValues>733</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>29</q2:hUnMA>
+                <q2:hBytes>42</q2:hBytes>
+                <q2:hValues>30</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="ppmWrite">
+                <q2:hUnMA>14404</q2:hUnMA>
+                <q2:hBytes>432004</q2:hBytes>
+                <q2:hValues>431984</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_printSetupTxt">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="KLTTrackFeatures">
+                <q2:hUnMA>28</q2:hUnMA>
+                <q2:hBytes>1160</q2:hBytes>
+                <q2:hValues>812</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>140</q2:hUnMA>
+                <q2:hBytes>1640</q2:hBytes>
+                <q2:hValues>1175</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_trackFeature">
+                <q2:hUnMA>1</q2:hUnMA>
+                <q2:hBytes>1446</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>52</q2:hUnMA>
+                <q2:hBytes>867</q2:hBytes>
+                <q2:hValues>359</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureListToPPM" consumer="_allocateFloatWindow">
+                <q2:hUnMA>1</q2:hUnMA>
+                <q2:hBytes>1446</q2:hBytes>
+                <q2:hValues>3</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTChangeTCPyramid" consumer="KLTUpdateTCBorder">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTChangeTCPyramid" consumer="KLTTrackFeatures">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>116</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTChangeTCPyramid" consumer="_pyramidSigma">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTChangeTCPyramid" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>1740</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="pgmReadFile">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>168</q2:hBytes>
+                <q2:hValues>60</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_printSetupBin">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>9</q2:hUnMA>
+                <q2:hBytes>17</q2:hBytes>
+                <q2:hValues>9</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>68</q2:hUnMA>
+                <q2:hBytes>564</q2:hBytes>
+                <q2:hValues>486</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>332</q2:hUnMA>
+                <q2:hBytes>21276</q2:hBytes>
+                <q2:hValues>9087</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>228</q2:hBytes>
+                <q2:hValues>116</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_printSetupTxt">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_KLTComputeSmoothedImage">
+                <q2:hUnMA>48</q2:hUnMA>
+                <q2:hBytes>728</q2:hBytes>
+                <q2:hValues>488</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>176</q2:hUnMA>
+                <q2:hBytes>1112</q2:hBytes>
+                <q2:hValues>623</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_trackFeature">
+                <q2:hUnMA>48</q2:hUnMA>
+                <q2:hBytes>4304</q2:hBytes>
+                <q2:hValues>518</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>288</q2:hUnMA>
+                <q2:hBytes>61670</q2:hBytes>
+                <q2:hValues>3880</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_allocateFloatWindow">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>6128</q2:hBytes>
+                <q2:hValues>63</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreateFloatImage" consumer="_KLTComputeGradients">
+                <q2:hUnMA>144</q2:hUnMA>
+                <q2:hBytes>1464</q2:hBytes>
+                <q2:hValues>1387</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="pgmReadFile">
+                <q2:hUnMA>76</q2:hUnMA>
+                <q2:hBytes>1636</q2:hBytes>
+                <q2:hValues>1102</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>88</q2:hBytes>
+                <q2:hValues>84</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>260</q2:hUnMA>
+                <q2:hBytes>18493</q2:hBytes>
+                <q2:hValues>9845</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="ppmWrite">
+                <q2:hUnMA>120</q2:hUnMA>
+                <q2:hBytes>12967830</q2:hBytes>
+                <q2:hValues>1800</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="_printSetupTxt">
+                <q2:hUnMA>52</q2:hUnMA>
+                <q2:hBytes>60</q2:hBytes>
+                <q2:hValues>52</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>28</q2:hBytes>
+                <q2:hValues>28</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="_findStringWidth">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="_printInteger">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>120</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWriteFileRGB" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>116</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureTable" consumer="_printFeatureBin">
+                <q2:hUnMA>44</q2:hUnMA>
+                <q2:hBytes>220532</q2:hBytes>
+                <q2:hValues>45</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureTable" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>7</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureTable" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>96</q2:hUnMA>
+                <q2:hBytes>332</q2:hBytes>
+                <q2:hValues>77</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTWriteFeatureTable" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>52</q2:hBytes>
+                <q2:hValues>21</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTUpdateTCBorder" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>2048</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="pgmRead">
+                <q2:hUnMA>110592</q2:hUnMA>
+                <q2:hBytes>129627</q2:hBytes>
+                <q2:hValues>110592</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="_printFeatureBin">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>54000</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="pnmReadHeader">
+                <q2:hUnMA>27</q2:hUnMA>
+                <q2:hBytes>27</q2:hBytes>
+                <q2:hValues>27</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="_getNextString">
+                <q2:hUnMA>1404</q2:hUnMA>
+                <q2:hBytes>1944</q2:hBytes>
+                <q2:hValues>1404</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>84</q2:hUnMA>
+                <q2:hBytes>2194</q2:hBytes>
+                <q2:hValues>1200</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="ppmWrite">
+                <q2:hUnMA>92</q2:hUnMA>
+                <q2:hBytes>20747276</q2:hBytes>
+                <q2:hValues>10372324</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="ppmWrite" consumer="_printHeader">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>32</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupTxt" consumer="_printShutdown">
+                <q2:hUnMA>88</q2:hUnMA>
+                <q2:hBytes>171</q2:hBytes>
+                <q2:hValues>89</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupTxt" consumer="_printSetupBin">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupTxt" consumer="_printSetupTxt">
+                <q2:hUnMA>77</q2:hUnMA>
+                <q2:hBytes>206</q2:hBytes>
+                <q2:hValues>82</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupTxt" consumer="_printHeader">
+                <q2:hUnMA>49</q2:hUnMA>
+                <q2:hBytes>10945</q2:hBytes>
+                <q2:hValues>1857</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupTxt" consumer="_printInteger">
+                <q2:hUnMA>9</q2:hUnMA>
+                <q2:hBytes>1530</q2:hBytes>
+                <q2:hValues>129</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupTxt" consumer="_printNhyphens">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>14400</q2:hBytes>
+                <q2:hValues>3603</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printSetupTxt" consumer="_printFeatureTxt">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>297505</q2:hBytes>
+                <q2:hValues>27019</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTTrackFeatures" consumer="KLTTrackFeatures">
+                <q2:hUnMA>28</q2:hUnMA>
+                <q2:hBytes>1276</q2:hBytes>
+                <q2:hValues>1276</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTTrackFeatures" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>36</q2:hUnMA>
+                <q2:hBytes>1392</q2:hBytes>
+                <q2:hValues>1044</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printHeader" consumer="_printShutdown">
+                <q2:hUnMA>32</q2:hUnMA>
+                <q2:hBytes>61</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printHeader" consumer="_printHeader">
+                <q2:hUnMA>48</q2:hUnMA>
+                <q2:hBytes>13840</q2:hBytes>
+                <q2:hValues>2096</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printHeader" consumer="_printInteger">
+                <q2:hUnMA>28</q2:hUnMA>
+                <q2:hBytes>1456</q2:hBytes>
+                <q2:hValues>24</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printHeader" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>0</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printHeader" consumer="_printNhyphens">
+                <q2:hUnMA>28</q2:hUnMA>
+                <q2:hBytes>9616</q2:hBytes>
+                <q2:hValues>28</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printHeader" consumer="_printFeatureTxt">
+                <q2:hUnMA>44</q2:hUnMA>
+                <q2:hBytes>263252</q2:hBytes>
+                <q2:hValues>624</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="pgmReadFile">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>112</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="_printSetupBin">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>57</q2:hUnMA>
+                <q2:hBytes>507</q2:hBytes>
+                <q2:hValues>385</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="_KLTFreePyramid">
+                <q2:hUnMA>84</q2:hUnMA>
+                <q2:hBytes>1080</q2:hBytes>
+                <q2:hValues>1002</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>160</q2:hUnMA>
+                <q2:hBytes>1864</q2:hBytes>
+                <q2:hValues>862</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>208</q2:hBytes>
+                <q2:hValues>96</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="_printSetupTxt">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="KLTTrackFeatures">
+                <q2:hUnMA>112</q2:hUnMA>
+                <q2:hBytes>448</q2:hBytes>
+                <q2:hValues>448</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>160</q2:hUnMA>
+                <q2:hBytes>2972</q2:hBytes>
+                <q2:hValues>1689</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTCreatePyramid" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>168</q2:hUnMA>
+                <q2:hBytes>32425</q2:hBytes>
+                <q2:hValues>1850</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_findStringWidth" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_findStringWidth" consumer="_printHeader">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>612</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_findStringWidth" consumer="_findStringWidth">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>40</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_findStringWidth" consumer="_printInteger">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>240</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_findStringWidth" consumer="_printFeatureTxt">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>18000</q2:hBytes>
+                <q2:hValues>0</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeKernels.clone.0" consumer="pgmReadFile">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeKernels.clone.0" consumer="_KLTComputeSmoothedImage">
+                <q2:hUnMA>292</q2:hUnMA>
+                <q2:hBytes>35380</q2:hBytes>
+                <q2:hValues>17812</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeKernels.clone.0" consumer="_KLTGetKernelWidths">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeKernels.clone.0" consumer="_computeKernels.clone.0">
+                <q2:hUnMA>340</q2:hUnMA>
+                <q2:hBytes>72696</q2:hBytes>
+                <q2:hValues>37984</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeKernels.clone.0" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>576</q2:hUnMA>
+                <q2:hBytes>35136</q2:hBytes>
+                <q2:hValues>17856</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeKernels.clone.0" consumer="_KLTComputeGradients">
+                <q2:hUnMA>580</q2:hUnMA>
+                <q2:hBytes>35380</q2:hBytes>
+                <q2:hValues>18100</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="_printShutdown">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="pgmReadFile">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>280</q2:hBytes>
+                <q2:hValues>60</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>60</q2:hBytes>
+                <q2:hValues>18</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>104</q2:hBytes>
+                <q2:hValues>67</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>960</q2:hBytes>
+                <q2:hValues>60</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>20</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="_trackFeature">
+                <q2:hUnMA>116</q2:hUnMA>
+                <q2:hBytes>55824</q2:hBytes>
+                <q2:hValues>35265</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>44</q2:hUnMA>
+                <q2:hBytes>4879</q2:hBytes>
+                <q2:hValues>423</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_trackFeature" consumer="_allocateFloatWindow">
+                <q2:hUnMA>28</q2:hUnMA>
+                <q2:hBytes>11544</q2:hBytes>
+                <q2:hValues>1950</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printInteger" consumer="_printHeader">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printInteger" consumer="_printInteger">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>944</q2:hBytes>
+                <q2:hValues>356</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>608</q2:hUnMA>
+                <q2:hBytes>2200</q2:hBytes>
+                <q2:hValues>608</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="KLTFreeFeatureList">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="KLTCountRemainingFeatures">
+                <q2:hUnMA>608</q2:hUnMA>
+                <q2:hBytes>54112</q2:hBytes>
+                <q2:hValues>608</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="KLTSelectGoodFeatures">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="KLTStoreFeatureList">
+                <q2:hUnMA>608</q2:hUnMA>
+                <q2:hBytes>18240</q2:hBytes>
+                <q2:hValues>608</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>608</q2:hUnMA>
+                <q2:hBytes>54120</q2:hBytes>
+                <q2:hValues>608</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="KLTCreateFeatureList">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>612</q2:hUnMA>
+                <q2:hBytes>41876</q2:hBytes>
+                <q2:hValues>612</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureList" consumer="KLTCreateFeatureTable">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_printShutdown">
+                <q2:hUnMA>5</q2:hUnMA>
+                <q2:hBytes>5</q2:hBytes>
+                <q2:hValues>1</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="pgmReadFile">
+                <q2:hUnMA>14</q2:hUnMA>
+                <q2:hBytes>428</q2:hBytes>
+                <q2:hValues>125</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_printSetupBin">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_quicksort">
+                <q2:hUnMA>4608</q2:hUnMA>
+                <q2:hBytes>8676</q2:hBytes>
+                <q2:hValues>4608</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_enforceMinimumDistance">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>24</q2:hBytes>
+                <q2:hValues>20</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>13</q2:hUnMA>
+                <q2:hBytes>29</q2:hBytes>
+                <q2:hValues>13</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTFreeFeatureList">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTCountRemainingFeatures">
+                <q2:hUnMA>56</q2:hUnMA>
+                <q2:hBytes>4816</q2:hBytes>
+                <q2:hValues>1020</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTFreeTrackingContext">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTStoreFeatureList">
+                <q2:hUnMA>168</q2:hUnMA>
+                <q2:hBytes>4872</q2:hBytes>
+                <q2:hValues>3060</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>320</q2:hUnMA>
+                <q2:hBytes>7385</q2:hBytes>
+                <q2:hValues>5212</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>76</q2:hUnMA>
+                <q2:hBytes>3016</q2:hBytes>
+                <q2:hValues>1015</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="ppmWriteFileRGB">
+                <q2:hUnMA>26</q2:hUnMA>
+                <q2:hBytes>1694</q2:hBytes>
+                <q2:hValues>139</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>13</q2:hUnMA>
+                <q2:hBytes>21</q2:hBytes>
+                <q2:hValues>13</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_printSetupTxt">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="KLTTrackFeatures">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>568</q2:hBytes>
+                <q2:hValues>568</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_KLTCreatePyramid">
+                <q2:hUnMA>60</q2:hUnMA>
+                <q2:hBytes>752</q2:hBytes>
+                <q2:hValues>393</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_trackFeature">
+                <q2:hUnMA>9</q2:hUnMA>
+                <q2:hBytes>12262</q2:hBytes>
+                <q2:hValues>26</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>688</q2:hUnMA>
+                <q2:hBytes>27851</q2:hBytes>
+                <q2:hValues>14070</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_KLTFreeFloatImage" consumer="_allocateFloatWindow">
+                <q2:hUnMA>32</q2:hUnMA>
+                <q2:hBytes>624</q2:hBytes>
+                <q2:hValues>149</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_allocateFloatWindow" consumer="KLTWriteFeatureListToPPM">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>5</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_allocateFloatWindow" consumer="_KLTCreateFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>1024</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_allocateFloatWindow" consumer="_trackFeature">
+                <q2:hUnMA>76</q2:hUnMA>
+                <q2:hBytes>35436</q2:hBytes>
+                <q2:hValues>9981</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_allocateFloatWindow" consumer="_allocateFloatWindow">
+                <q2:hUnMA>112</q2:hUnMA>
+                <q2:hBytes>30016</q2:hBytes>
+                <q2:hValues>12782</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printNhyphens" consumer="_printHeader">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printNhyphens" consumer="_printNhyphens">
+                <q2:hUnMA>16</q2:hUnMA>
+                <q2:hBytes>14384</q2:hBytes>
+                <q2:hValues>2396</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="_createArray2D.clone.0">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>12</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="pgmReadFile">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>4</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="KLTFreeFeatureTable">
+                <q2:hUnMA>24</q2:hUnMA>
+                <q2:hBytes>36</q2:hBytes>
+                <q2:hValues>24</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="KLTStoreFeatureList">
+                <q2:hUnMA>18012</q2:hUnMA>
+                <q2:hBytes>18360</q2:hBytes>
+                <q2:hValues>18012</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="KLTWriteFeatureTable">
+                <q2:hUnMA>18012</q2:hUnMA>
+                <q2:hBytes>55220</q2:hBytes>
+                <q2:hValues>18012</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="_printHeader">
+                <q2:hUnMA>18012</q2:hUnMA>
+                <q2:hBytes>55204</q2:hBytes>
+                <q2:hValues>18012</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="_KLTFreeFloatImage">
+                <q2:hUnMA>4</q2:hUnMA>
+                <q2:hBytes>8</q2:hBytes>
+                <q2:hValues>4</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="KLTCreateFeatureTable" consumer="KLTCreateFeatureTable">
+                <q2:hUnMA>12</q2:hUnMA>
+                <q2:hBytes>16</q2:hBytes>
+                <q2:hValues>16</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeIntensityDifference" consumer="_compute2by1ErrorVector">
+                <q2:hUnMA>2700</q2:hUnMA>
+                <q2:hBytes>748800</q2:hBytes>
+                <q2:hValues>748562</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_computeIntensityDifference" consumer="_sumAbsFloatWindow">
+                <q2:hUnMA>2700</q2:hUnMA>
+                <q2:hBytes>459000</q2:hBytes>
+                <q2:hValues>458853</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printFeatureTxt" consumer="_printShutdown">
+                <q2:hUnMA>8</q2:hUnMA>
+                <q2:hBytes>12</q2:hBytes>
+                <q2:hValues>8</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printFeatureTxt" consumer="_printHeader">
+                <q2:hUnMA>20</q2:hUnMA>
+                <q2:hBytes>4724</q2:hBytes>
+                <q2:hValues>688</q2:hValues>
+            </q2:channel>
+            <q2:channel producer="_printFeatureTxt" consumer="_printFeatureTxt">
+                <q2:hUnMA>32</q2:hUnMA>
+                <q2:hBytes>725904</q2:hBytes>
+                <q2:hValues>304676</q2:hValues>
+            </q2:channel>
+        </q2:QDUGraph>
+        
+	<q2:CallGraph>
+		<q2:call caller="canny" callee="hw_gaussian_nms">
+			<q2:calls>34000</q2:calls>
+			<q2:contribution>0.3423002</q2:contribution>
+		</q2:call>
+		<q2:call caller="canny" callee="hw_apply_hysteresis">
+			<q2:calls>12000</q2:calls>
+			<q2:contribution>0.0234</q2:contribution>
+		</q2:call>
+	</q2:CallGraph>
+        
+    </q2:application>
+</q2:profiles>
